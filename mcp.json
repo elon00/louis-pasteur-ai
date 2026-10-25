@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "louis-pasteur-ai": {
+      "command": "cargo",
+      "args": [
+        "run",
+        "--release",
+        "--quiet"
+      ],
+      "env": {
+        "RUST_LOG": "info",
+        "TITAN_PROTOCOL": "PASTEUR",
+        "FIPS_203_LEVEL": "ML-KEM-768",
+        "FIPS_204_LEVEL": "ML-DSA-65"
+      },
+      "tools": [
+        {
+          "name": "simulate_microbial_attenuation",
+          "description": "Models pathogen passage virulence reduction curves for rabies and anthrax immunization vectors",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "pathogen_strain": {
+                "type": "string"
+              },
+              "passage_count": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "pathogen_strain"
+            ]
+          }
+        },
+        {
+          "name": "analyze_molecular_stereoisomerism",
+          "description": "Calculates optical rotational dispersion and enantiomeric resolution in chiral tartaric crystals",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "specific_rotation_deg": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "specific_rotation_deg"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
